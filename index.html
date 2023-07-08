@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dear.is</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" style="display: block; -webkit-user-select: none; margin: auto; cursor: zoom-in; background-color: hsl(0, 0%, 90%); transition: background-color 300ms"></canvas>
+
+    <script>
+      // Colors
+      const colors = ["#ffc09f", "#ffee93", "#fcf5c7", "#a0ced9", "#adf7b6", "#e27396", "#ea9ab2", "#efcfe3", "#eaf2d7", "#b3dee2", "#bcf4de", "#cde5d7", "#ded6d1", "#eec6ca", "#ffb7c3", "#cdb4db", "#ffc8dd", "#ffafcc", "#bde0fe", "#a2d2ff", "#d8e2dc", "#ccd5ae", "#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff", "#f4978e", "#f8ad9d", "#fbc4ab", "#ffdab9", "#ffcbf2", "#e2afff", "#d0d1ff", "#c8e7ff", "#c0fdff", "#fde2e4", "#fad2e1", "#bee1e6", "#f0efeb", "#cddafd", "#fde4cf", "#ffcfd2", "#f1c0e8", "#cfbaf0", "#a3c4f3", "#90dbf4", "#8eecf5", "#7bdff2", "#b2f7ef", "#f7d6e0", "#f2b5d4", "#c5dedd", "#fde2e4", "#fad2e1", "#bcd4e6", "#99c1de", "#809bce", "#95b8d1", "#b8e0d2", "#d6eadf", "#eac4d5"];
+
+      // Create a canvas
+      const canvas = document.getElementById("myCanvas");
+      const context = canvas.getContext("2d");
+
+      // Set canvas dimensions
+      const width = 1875;
+      const height = 1275;
+      canvas.width = width;
+      canvas.height = height;
+
+      // Create gradient
+      const gradient = context.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, colors[Math.floor(Math.random() * colors.length)]);
+      gradient.addColorStop(0.5, colors[Math.floor(Math.random() * colors.length)]);
+      gradient.addColorStop(1, colors[Math.floor(Math.random() * colors.length)]);
+
+      // Apply gradient to the canvas
+      context.fillStyle = gradient;
+      context.fillRect(0, 0, width, height);
+    </script>
+  </body>
+</html>
